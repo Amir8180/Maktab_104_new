@@ -10,6 +10,7 @@
                 <td>شناسه درخواست</td>
                 <td>عنوان</td>
                 <td>توضیحات</td>
+                <td>عملیات</td>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,11 @@
                 <td>@ticket.Id</td>
                 <td>@ticket.Title</td>
                 <td>@ticket.Description</td>
+                <td>
+                    <a class="btn btn-sm btn-info" asp-page="/TicketDetaile" asp-route-Id="@ticket.Id">
+                        مشاهده
+                    </a>
+                </td>
             </tr>
             }
         </tbody>
