@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using Data;
+using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -43,7 +44,8 @@ namespace CustomerUI.Pages
 
         public void OnGet()
         {
-
+            var database = new Database();
+            tickets = database.GetTickets();
         }
         [HttpPost]
         public void OnPost()

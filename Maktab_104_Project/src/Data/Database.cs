@@ -1,10 +1,22 @@
-﻿using Entities;
+﻿using Contracts;
+using Entities;
 
 namespace Data
 {
-    public static class Database
+    public  class Database : IDatabase
     {
-        public static List<Ticket> tickets { get; set; }
+        private static List<Ticket> _tickets = new List<Ticket>();
+        
+        public int AddTicket(Ticket ticket)
+        {
+            ticket.Id = _tickets.Max(m => m.Id) + 1;
+            _tickets.Add(ticket);
+            return ticket.Id;
+        }
 
+        public List<Ticket> GetTickets()
+        {
+            return _tickets;
+        }
     }
 }
