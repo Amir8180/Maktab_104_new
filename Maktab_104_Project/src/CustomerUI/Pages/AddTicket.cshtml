@@ -1,0 +1,19 @@
+﻿@page
+@model CustomerUI.Pages.AddTicketModel
+@{
+}
+
+<form>
+    <div class="form-group">
+        <label asp-for="ticket.Title"></label>
+        <br />
+        <input type="text" class="form-control" asp-for="ticket.Title" placeholder="عنوان درخواست">
+    </div>
+    <div class="form-group">
+        <label asp-for="ticket.Description"></label>
+        <br />
+        <input type="text" class="form-control" asp-for="ticket.Description" placeholder="توضیحات">
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">ثبت</button>
+</form>

@@ -1,10 +1,25 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "درخواست ها";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <table class="table table-info table-striped table-resposive table-hover">
+        <thead>
+            <tr>
+                <td>شناسه درخواست</td>
+                <td>عنوان</td>
+                <td>توضیحات</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var ticket in Model.tickets)
+            {
+            <tr>
+                <td>@ticket.Id</td>
+                <td>@ticket.Title</td>
+                <td>@ticket.Description</td>
+            </tr>
+            }
+        </tbody>
+    </table>
