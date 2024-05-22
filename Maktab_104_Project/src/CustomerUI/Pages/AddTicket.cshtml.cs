@@ -10,15 +10,13 @@ namespace CustomerUI.Pages
 
         public AddTicketModel()
         {
-            
+
         }
 
         #region Model
         [BindProperty]
-        public Ticket ticket { get; set; }
+        public Ticket Ticket { get; set; }
         #endregion
-
-
         public void OnGet()
         {
 
@@ -27,8 +25,9 @@ namespace CustomerUI.Pages
         [HttpPost]
         public void OnPost()
         {
-            Database.tickets.Add(ticket);
-
+            var database = new Database();
+            database.AddTicket(Ticket);
+            RedirectToPage("Index");
         }
 
     }

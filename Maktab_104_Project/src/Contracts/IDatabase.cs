@@ -4,7 +4,7 @@ namespace Contracts
 {
     public interface IDatabase
     {
-        List<Ticket> GetTickets();
+        List<Ticket> GetTicket();
         int AddTicket(Ticket ticket);
     }
 }
