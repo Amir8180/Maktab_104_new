@@ -12,10 +12,19 @@ namespace DevCard_Promote.Controllers
         {
             return View();
         }
+        [HttpGet]
         public IActionResult Contact()
         {
-            return View();
+            var model = new Contact();
+            return View(model);
         }
+        [HttpPost]
+
+        public IActionResult Contact(Contact form)
+        {
+            return Json(Ok());
+        }
+
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
