@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 
 namespace DevCard_Promote.Models
@@ -16,6 +17,8 @@ namespace DevCard_Promote.Models
         [MaxLength(450, ErrorMessage = "حداکثر طول کاراکتر 450 است")]
         public string Message { get; set; }
         [Required(ErrorMessage = "این فیلد اجباری است")]
-        public string Services { get; set; }
+        public string Service { get; set; }
+
+        public SelectList Services { get; set; }
     }
 }
