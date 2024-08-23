@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using RoomService_Context;
+using Room_Services._2_Infrastructure;
 
 namespace Room_Services.Pages
 {
@@ -14,11 +14,19 @@ namespace Room_Services.Pages
             _context = context;
         }
 
+        #region Model
+
+        #endregion
         public void OnGet()
         {
-            var order = new Order (45);
+            var order = new Order(86);
             _context.Orders.Add(order);
             _context.SaveChanges();
+        }
+        [HttpPost]
+        public void OnPost()
+        {
+
         }
     }
 }

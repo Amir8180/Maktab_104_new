@@ -1,21 +1,19 @@
-
 using Microsoft.EntityFrameworkCore;
-using Room_Services._2_Infrastructure;
+using Room_Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
-
-builder.Services.AddDbContext<DB_Context>(options => options.UseSqlServer(
-builder.Configuration.GetConnectionString("RoomServiceDB")));
+builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<RM_Context>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("RoomServicesDB")));
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Error");
+    app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
@@ -27,6 +25,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapRazorPages();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

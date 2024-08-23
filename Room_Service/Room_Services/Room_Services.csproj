@@ -16,8 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Entities\Entities.csproj" />
-    <ProjectReference Include="..\src\RoomService_Context\RoomService_Context.csproj" />
+    <Folder Include="1-Domain\" />
   </ItemGroup>
 
 </Project>
